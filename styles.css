@@ -13,7 +13,10 @@ body, a:link, a:visited, a:active{
 .title, .addDancerButton, .addDancerButton1, .addDancerButton2{
   float: right;
   padding:5px 12px;
-  
+}
+.title, .lineUpButton .keepDancing{
+  float: left;
+  padding:5px 12px;
 }
 .topbar{
   height:32px;
@@ -29,15 +32,15 @@ body, a:link, a:visited, a:active{
 }
 .blinky {
   position: absolute;
-  content:url(img/like-1.png)
+  content:url(img/star.png)
 }
 .twirly {
   position: absolute;
   content:url(img/compact-disc.png);
 }
-.runny {
+.beaty {
   position: absolute;
-  content:url(img/star.png)
+  content:url(img/like-1.png)
 }
 
 @keyframes spin {
@@ -45,5 +48,12 @@ body, a:link, a:visited, a:active{
     transform: rotate(360deg);
   }
 }
+
+@keyframes beat {
+  to {
+    transform: scale(1.2);
+  }
+}
+
 
 

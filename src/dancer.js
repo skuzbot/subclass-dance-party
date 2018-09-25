@@ -20,3 +20,18 @@ Dancer.prototype.setPosition = function(top, left) {
   this.$node.css(styleSettings);
 };
 
+Dancer.prototype.lineUp = function() {
+  var styleSettings = {
+    left: 30
+  };
+  this.$node.css(styleSettings);
+  this.$node.css({'transition': '1s linear'});
+};
+
+Dancer.prototype.keepDancing = function() {
+  var styleSettings = {
+    left: $('body').width() * Math.random(),
+    top: $('body').height() * Math.random()
+  };
+  this.$node.css(styleSettings);
+};
