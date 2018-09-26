@@ -51,19 +51,21 @@ $(document).ready(function () {
     });
   });
 
-  // event listener on our target "blinkyDancer"
-  //  we want it to listen to a hover/mouse near
-  //  we want to run our mouse follow function here
+
   $('#wrapper').on('click', '.beaty', function(event) {
     window.dancers.forEach(function (dancer) {
-      dancer.love();  
-    });
-    return undefined;
+      if (dancer instanceof BeatyDancer) {
+        dancer.love();  
+      }
+    }); 
   });
   
   $('#wrapper').on('click', '.blinky', function(event) {
     window.dancers.forEach(function (dancer) {
-      dancer.shoot();  
+      if (dancer instanceof BlinkyDancer) {  
+        dancer.$node.css({'display': 'block'});
+        dancer.shoot();
+      }  
     });
   });
 

@@ -39,3 +39,17 @@ Dancer.prototype.keepDancing = function() {
   this.$node.css(styleSettings);
 };
 
+Dancer.prototype.shoot = function () {
+  var styleSettings = {
+    left: $('body').width() * -10 * Math.random(),
+    top: $('body').height() * -10 * Math.random()
+  };
+  this.$node.css(styleSettings);
+};
+
+Dancer.prototype.love = function () {
+  var styleSettings = {
+    content: ' url(img/like-1.png)'
+  };
+  this.$node.css(styleSettings);
+};

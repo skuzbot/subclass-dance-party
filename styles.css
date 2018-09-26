@@ -4,7 +4,7 @@ body, html{
 body{
   margin: 0px;
   font-size: 18px;
-  background-image: url(img/bg.png);
+  background-image: url(img/bananas.png);
   background-repeat: repeat;
 }
 body, a:link, a:visited, a:active{

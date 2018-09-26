@@ -1,6 +1,6 @@
 var BlinkyDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<span class="dancer, blinky"></span>');
+  this.$node = $('<a href="#" class="dancer, blinky"></a>');
   this.top = top;
   this.left = left;
   this.setPosition(top, left);
@@ -18,10 +18,10 @@ BlinkyDancer.prototype.step = function() {
 //  will be a function prototype of blinkyDancer
 //  what behaviors happen?
 
-BlinkyDancer.prototype.shoot = function () {
-  var styleSettings = {
-    left: $('body').width() * -10 * Math.random(),
-    top: $('body').height() * -10 * Math.random()
-  };
-  this.$node.css(styleSettings);
-};
+// BlinkyDancer.prototype.shoot = function () {
+//   var styleSettings = {
+//     left: $('body').width() * -10 * Math.random(),
+//     top: $('body').height() * -10 * Math.random()
+//   };
+//   this.$node.css(styleSettings);
+// };
