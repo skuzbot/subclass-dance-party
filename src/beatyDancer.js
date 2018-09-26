@@ -1,7 +1,7 @@
 var BeatyDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
   this.timeBetweenSteps = timeBetweenSteps;
-  this.$node = $('<span class="dancer, beaty"></span>');
+  this.$node = $('<a href="#" class="dancer, beaty"></a>');
   this.top = top;
   this.left = left;
   this.setPosition(top, left);
@@ -17,6 +17,13 @@ BeatyDancer.prototype.constructor = BeatyDancer;
 
 BeatyDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
+};
+
+BeatyDancer.prototype.love = function() {
+  var styleSettings = {
+    content: ' url(img/like-1.png)'
+  };
+  this.$node.css(styleSettings);
 };
 
 

@@ -1,5 +1,6 @@
 $(document).ready(function () {
   window.dancers = [];
+  var counter = 0;
 
   $('.addDancerButton').on('click', function (event) {
     /* This function sets up the click handlers for the create-dancer
@@ -23,20 +24,19 @@ $(document).ready(function () {
     // make a dancer with a random position
     var left = $('body').height() * Math.random();
     var top = $('body').width() * Math.random();
-
+    //iterates counter for iD attr.
+    counter++;
 
     var dancer = new dancerMakerFunction(
       left,
       top,
       Math.random() * 1000
     );
-    $('body').append(dancer.$node);
-    var dancerNode = {
-      'dancer': dancerMakerFunctionName,
-      'x': left,
-      'y': top,
-    };
-    window.dancers.push(dancerNode);
+    //adds id to dancer so click events can only select that dancer
+    dancer.$node.attr('id', 'dancer #' + counter);
+    $('#wrapper').append(dancer.$node);
+    
+    window.dancers.push(dancer);
   });
 
   $('.lineUpButton').on('click', function (event) {
@@ -51,7 +51,26 @@ $(document).ready(function () {
     });
   });
 
-  // $('.dancer').on('hover')
+  // event listener on our target "blinkyDancer"
+  //  we want it to listen to a hover/mouse near
+  //  we want to run our mouse follow function here
+  $('#wrapper').on('click', '.beaty', function(event) {
+    window.dancers.forEach(function (dancer) {
+      dancer.love();  
+    });
+    return undefined;
+  });
+  
+  $('#wrapper').on('click', '.blinky', function(event) {
+    window.dancers.forEach(function (dancer) {
+      dancer.shoot();  
+    });
+  });
+
+
+  //oooor event listener on mouseclick for "blinkyDancer"
+  //
+
 
   // $(window.onload = function () {
   //   var blinkyDancer = document.getElementByClass("blinky");

@@ -1,7 +1,7 @@
 var TwirlyDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
   this.timeBetweenSteps = timeBetweenSteps;
-  this.$node = $('<span class="dancer, twirly"></span>');
+  this.$node = $('<a href="#" class="dancer, twirly"></a>');
   this.top = top;
   this.left = left;
   this.setPosition(top, left);

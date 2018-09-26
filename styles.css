@@ -29,10 +29,18 @@ body, a:link, a:visited, a:active{
   border:12px solid rgb(184, 95, 95);
   border-radius:10px;
   position:absolute;
+  display:block;
+  z-index: 500;
+  transition: 1s linear;
 }
-.blinky {
+.blinky{
   position: absolute;
   content:url(img/star.png)
+}
+.blinky .clicked {
+  position: absolute;
+  content: url(img/like-1.png);
+  transition: .5s linear;
 }
 .twirly {
   position: absolute;
@@ -40,7 +48,12 @@ body, a:link, a:visited, a:active{
 }
 .beaty {
   position: absolute;
-  content:url(img/like-1.png)
+  content:url(img/dislike-1.png)
+}
+
+.beatylove {
+  position: absolute;
+  content: url(img/like-1.png)
 }
 
 @keyframes spin {
